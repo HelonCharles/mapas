@@ -32,7 +32,6 @@
     <input type="button" onclick = "removeEarthquakeMarker(earthquakeMarker5, earthquakeMarker1, earthquakeMarker2, earthquakeMarker3, earthquakeMarker4)" value="Catedral">
     
     <script>
-        //script 1
         let basemap = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {});
 
         let googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
@@ -51,8 +50,6 @@
         layers:[basemap]
         });
 
-        //script 2
-
         let locaisEspeciais = ["Marco central de Boa Vista", "Palácio", "AL-RR", "TJ-RR", "Catedral"];
         let area = [170, 1815, 6107, 1467, 1975];
         let earthquakeMarker1 = L.marker([2.820723, -60.672418]);
@@ -66,8 +63,6 @@
         let earthquakeMarker5 = L.marker([2.819643,-60.673310]);
         map.addLayer(earthquakeMarker5);
 
-        //script 3
-
         let rodoviasGeoJson = L.geoJson(rodovia1, {
             
             onEachFeature:function(feature, layer){
@@ -76,10 +71,8 @@
                         var jud = 'MUN';
                     }else if(feature.properties.jurisdicao == 'Estadual'){
                         var jud = 'EST';
-                    }else if(feature.properties.jurisdicao == 'Federal'){
-                        var jud = 'FED';
                     }else{
-                        var jud = feature.properties.jurisdicao
+                        var jud = 'FED';
                     }
 
                 layer.bindPopup('<br/> Rodovia: ' + jud);//Verificar o nome da variável Lat/Long
@@ -103,12 +96,12 @@
             weight: 0.5,
             fill: false,
         });
-        
+        //map.addLayer(sistLacustres1);
         let sedesMunic = L.geoJson(sedesMunic1, {
             color: 'red'
         });
-        
-        //script 2
+        //map.addLayer(sedesMunic);
+
         earthquakeMarker1.bindPopup("<b>Locais Especiais:</b> " + locaisEspeciais[0] + "<br><b>Área:</b> " + area[0]);
         earthquakeMarker2.bindPopup("<b>Locais Especiais:</b> " + locaisEspeciais[1] + "<br><b>Área:</b> " + area[1]);
         earthquakeMarker3.bindPopup("<b>Locais Especiais:</b> " + locaisEspeciais[2] + "<br><b>Área:</b> " + area[2]);
