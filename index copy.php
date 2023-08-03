@@ -32,6 +32,7 @@
     <input type="button" onclick = "removeEarthquakeMarker(earthquakeMarker5, earthquakeMarker1, earthquakeMarker2, earthquakeMarker3, earthquakeMarker4)" value="Catedral">
     
     <script>
+//11111111111111111111111111111111111111111111        
         let basemap = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {});
 
         let googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
@@ -49,7 +50,7 @@
         zoom: 9,
         layers:[basemap]
         });
-
+// 222222222222222222222222222222222222222222222222
         let locaisEspeciais = ["Marco central de Boa Vista", "Palácio", "AL-RR", "TJ-RR", "Catedral"];
         let area = [170, 1815, 6107, 1467, 1975];
         let earthquakeMarker1 = L.marker([2.820723, -60.672418]);
@@ -62,6 +63,8 @@
         map.addLayer(earthquakeMarker4);
         let earthquakeMarker5 = L.marker([2.819643,-60.673310]);
         map.addLayer(earthquakeMarker5);
+
+//333333333333333333333333333333333333333333333333
 
         let rodoviasGeoJson = L.geoJson(rodovia1, {
             
@@ -101,6 +104,8 @@
             color: 'red'
         });
         //map.addLayer(sedesMunic);
+
+//2222222222222222222222222222222222222222222222222222222
 
         earthquakeMarker1.bindPopup("<b>Locais Especiais:</b> " + locaisEspeciais[0] + "<br><b>Área:</b> " + area[0]);
         earthquakeMarker2.bindPopup("<b>Locais Especiais:</b> " + locaisEspeciais[1] + "<br><b>Área:</b> " + area[1]);
